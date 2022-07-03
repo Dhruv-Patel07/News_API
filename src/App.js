@@ -7,7 +7,7 @@ function App() {
   const [mydata,setData]=useState([]);
   const apiGet=()=>{
     var a;
-    var c=parseInt(prompt("Which Category You Want To Explore  ? Press (0 for Sports, 1 for Entertainment,2 for International,3 for Science,4 for political) News "))
+    var c=parseInt(prompt("Which Category You Want To Explore  ? Press (0 for Sports, 1 for Entertainment,2 for International,3 for Science,4 for political,5 for National , 6 for World , 7 for Technology , 8 for AutoMobile , 9 for StartUp , 10 for Business, 11 for Miscellaneous, 12 for Hatke (Unconventional)) News "))
     switch(c){
       case 0:
         a='sports';
@@ -24,8 +24,32 @@ function App() {
       case 4:
         a='politics';
         break;
+      case 5:
+        a='national';
+        break;
+      case 6:
+        a='world';
+        break;
+      case 7:
+        a='technology';
+        break;
+      case 8:
+        a='Automobile';
+        break;
+      case 9:
+        a='startup';
+        break;
+      case 10:
+        a='business';
+        break;
+      case 11:
+        a='miscellaneous';
+        break;
+      case 12:
+        a='hatke';
+        break;
       default:
-        a='sports'
+        a='"'
     }
     fetch('https://inshorts.deta.dev/news?category='+a)  //category=sports,entertainment,international,science,politics
     .then((response)=>response.json())
